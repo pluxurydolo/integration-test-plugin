@@ -49,6 +49,9 @@ class TestPlugin implements Plugin<Project> {
             if (testTask.name == 'test') {
                 testTask.useJUnitPlatform()
                 testTask.systemProperty 'spring.profiles.active', 'test'
+
+                testTask.setMinHeapSize('512m')
+                testTask.setMaxHeapSize('4g')
             }
         }
     }
